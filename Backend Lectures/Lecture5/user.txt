@@ -1,4 +1,4 @@
 {
-  "username": "ali khan jadoon abbottabad ",
+  "username": "ali",
   "gender": "male"
 }
