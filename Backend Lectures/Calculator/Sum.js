@@ -41,8 +41,7 @@ const sumRequestHandler = (req, res) => {
         <h1>First number is ${firstNum}</h1>
         <h1>Second number is ${secondNum}</h1>
         <h1>Result: ${result}</h1>
-        
-        
+
         `);
   });
 };
