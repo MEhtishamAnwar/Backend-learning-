@@ -1,14 +1,15 @@
 const express=require("express");
 const hostRouter=express.Router();
  const parseUrlencoded=require("body-parser").urlencoded;
+rootDir=require("../utils/pathUtil");
+
+
 hostRouter.use(parseUrlencoded({extended:false}));
 const path=require("path");
-hostRouter.post("/add-home",(req,res,next)=>{
-    console.log(req.url,req.method)
-    
-    res.sendFile(path.join(__dirname,"../views/addhome.html"))
-    res.send(`  <h2>Your house name: ${req.body.houseName}</h2>`)
-    console.log(req.body.houseName)
-})
+const { root } = require("postcss");
 
-module.exports=hostRouter;
+const registerHome=[];
+hostRouter.post("/add-home",)
+
+exports.hostRouter=hostRouter;
+exports.registerHome=registerHome;

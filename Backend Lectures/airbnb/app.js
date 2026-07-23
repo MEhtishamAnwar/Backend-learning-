@@ -4,14 +4,19 @@ path=require("path");
 // external modules
 const express=require("express");
 const app=express();
+
+app.set('view engine', 'ejs');
+app.set("views", 'views');
 // local module
 const userRouter=require("./routes/userRouter");
-const hostRouter=require("./routes/hostRouter");
+const {hostRouter}=require("./routes/hostRouter");
 const rootDir=require("./utils/pathUtil");
 parseUrlencoded=require("body-parser").urlencoded;
+app.use(express.static(path.join(rootDir,"public")));
 app.use(parseUrlencoded({extended:false}));  
 app.use(userRouter);
 app.use(hostRouter);
+
 app.use((req,res,next)=>{
     res.status(404).sendFile(path.join(rootDir, "views", "404.html"));
 });
