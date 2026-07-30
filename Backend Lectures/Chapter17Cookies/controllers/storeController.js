@@ -3,6 +3,9 @@ const Home = require("../models/home");
 
 // Home Page
 exports.getIndex = (req, res, next) => {
+
+  console.log("session value:", req.session);
+
   Home.find()
     .then((registeredHomes) => {
       res.render("store/index", {
