@@ -10,7 +10,6 @@ exports.getAddHome = (req, res, next) => {
     user: req.session.user,
   });
 };
-
 exports.getEditHome = (req, res, next) => {
   const homeId = req.params.homeId;
   const editing = req.query.editing === "true";
