@@ -40,15 +40,17 @@ function App() {
   };
 
   return (
-    <center className="todo-container">
-      <AppName />
-      <AddTodo onNewItem={handleNewItem} />
-      {todoItems.length === 0 && <WelcomeMessage></WelcomeMessage>}
-      <TodoItems
-        todoItems={todoItems}
-        onDeleteClick={handleDeleteItem}
-      ></TodoItems>
-    </center>
+    <div className="todo-container">
+      <div className="todo-shell">
+        <AppName />
+        <AddTodo onNewItem={handleNewItem} />
+        {todoItems.length === 0 && <WelcomeMessage />}
+        <TodoItems
+          todoItems={todoItems}
+          onDeleteClick={handleDeleteItem}
+        />
+      </div>
+    </div>
   );
 }
 

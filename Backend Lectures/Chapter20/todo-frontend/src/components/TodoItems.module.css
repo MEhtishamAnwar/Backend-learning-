@@ -1,3 +1,4 @@
-.itemsContainer {
-  text-align: left;
+﻿.itemsContainer {
+  display: grid;
+  gap: 14px;
 }

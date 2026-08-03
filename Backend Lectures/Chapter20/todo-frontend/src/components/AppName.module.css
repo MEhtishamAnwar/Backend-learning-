@@ -1,6 +1,9 @@
-.todoHeading {
-  font-weight: 700;
-  font-size: 45px;
-  margin: 10px;
-  margin-bottom: 20px;
+﻿.todoHeading {
+  font-weight: 800;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  margin: 0 0 12px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: #0f172a;
+  text-align: center;
 }

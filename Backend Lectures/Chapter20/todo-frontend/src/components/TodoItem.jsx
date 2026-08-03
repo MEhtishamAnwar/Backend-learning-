@@ -1,4 +1,6 @@
-function TodoItem({ id,todoName, todoDate, onDeleteClick }) {
+import styles from "./TodoItem.module.css";
+
+function TodoItem({ id, todoName, todoDate, onDeleteClick }) {
   const formattedDate = todoDate
     ? new Date(todoDate).toLocaleDateString("en-US", {
         year: "numeric",
@@ -8,20 +10,18 @@ function TodoItem({ id,todoName, todoDate, onDeleteClick }) {
     : "";
 
   return (
-    <div className="container">
-      <div className="row kg-row">
-        <div className="col-6">{todoName}</div>
-        <div className="col-4">{formattedDate}</div>
-        <div className="col-2">
-          <button
-            type="button"
-            className="btn btn-danger kg-button"
-            onClick={() => onDeleteClick(id)}
-          >
-            Delete
-          </button>
-        </div>
+    <div className={styles.itemCard}>
+      <div className={styles.itemMeta}>
+        <span className={styles.itemName}>{todoName}</span>
+        <span className={styles.itemDate}>{formattedDate}</span>
       </div>
+      <button
+        type="button"
+        className={styles.deleteButton}
+        onClick={() => onDeleteClick(id)}
+      >
+        Delete
+      </button>
     </div>
   );
 }
